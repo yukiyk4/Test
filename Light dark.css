@@ -1,0 +1,75 @@
+/* ==========================================================================
+   THEME SETUP 
+   ========================================================================== */
+
+/* Default Light Mode Colors */
+:root {
+    --bg-color: #fafafa;
+    --text-color: #222222;
+    --navbar-bg: bisque;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Colors - Activated when the body has the .dark-mode class */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --navbar-bg: #1e1e1e;
+    --card-bg: #1a1a1a;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   APPLYING THE THEME
+   ========================================================================== */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.navbar1 {
+    background-color: var(--navbar-bg);
+    transition: background-color 0.3s ease;
+}
+
+.card-box {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Simple styling for the mode toggle button */
+.theme-toggle-btn {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   THEME VARIABLES
+   ========================================================================== */
+
+/* ☀️ Default Light Mode Colors */
+:root {
+    --nav-bg: bisque;
+    --nav-text: #d9534f;        /* Reddish color for text */
+    --btn-bar-bg: #d9534f;     /* Bars match the text color in light mode */
+    --btn-bar-hover: #222222;  /* Dark color on hover */
+}
+
+/* 🌙 Dark Mode Colors */
+body.dark-mode {
+    --nav-bg: #1e1e1e;         /* Dark grey background */
+    --nav-text: #f0f0f0;       /* Off-white text */
+    --btn-bar-bg: aliceblue;   /* Light bars for dark contrast */
+    --btn-bar-hover: #d9534f;  /* Turns red on hover */
+}

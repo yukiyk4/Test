@@ -1,0 +1,60 @@
+/* ==========================================
+   3. THE MAIN CONTENT CONTAINER 
+   ========================================== */
+.content-container {
+    padding: 5.5rem 1.5rem 2rem;
+}
+
+/* THE PARENT CONTAINER */
+.card-grid-container {
+    display: grid;
+    
+    /* 🌟 THE MAGIC LINE: 
+       - auto-fit: Creates as many columns as will physically fit on the screen.
+       - minmax(280px, 1fr): Each card must be at least 280px wide. If there is extra 
+         room, they will stretch equally (1fr) to fill the remaining space. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    /* Creates a clean 30px gap between all the cards (rows and columns) */
+    gap: 30px; 
+    
+    /* Gives the entire container setup some breathing room inside your webpage */
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    z-index: 99;
+    
+
+}
+
+/* MODIFICATION: Remove the individual card margins since the Grid layout now handles positioning */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    /* Removed: max-width and margin from previous step so grid can control sizing */
+}
+
+/* (Keep the rest of your .card-box, img, and :hover styles from before!) */
+.card-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensures all boxes match the height of the tallest card in the row */
+}
+.card-image-wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+.card-content {
+    padding: 1.5rem;
+}
+.card-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
