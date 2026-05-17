@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    background-color: rgba(131, 114, 114, 0.95);
+    background-color: var(--bg-overlay);
     width: 300px;
     height: 100%;
     position: absolute;
@@ -49,6 +49,7 @@
     left: 0;
     padding: 6rem 2rem 2rem;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
 }
 
 .menu_overlay a {

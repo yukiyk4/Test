@@ -1,23 +1,47 @@
 /* ==========================================================================
-   THEME SETUP 
+   THEME SETUP (Merged & Simplified)
    ========================================================================== */
 
-/* Default Light Mode Colors */
+/* ☀️ Default Light Mode Colors */
 :root {
     --bg-color: #fafafa;
     --text-color: #222222;
-    --navbar-bg: bisque;
+    
+    /* Navbar variables combined */
+    --nav-bg: bisque;
+    --nav-text: #d9534f;        /* Reddish color for text */
+    
+    /* Menu button variables */
+    --btn-bar-bg: #d9534f;     /* Bars match the text color in light mode */
+    --btn-bar-hover: #222222;  /* Dark color on hover */
+    
+    /* Other page layout variables */
     --card-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    
+    /*menu overlay*/
+    --bg-overlay: #f8f8ff;
 }
 
-/* Dark Mode Colors - Activated when the body has the .dark-mode class */
+/* 🌙 Dark Mode Colors - Activated when the body has the .dark-mode class */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #f0f0f0;
-    --navbar-bg: #1e1e1e;
+    
+    /* Navbar variables combined */
+    --nav-bg: #1e1e1e;         /* Dark grey background */
+    --nav-text: #f0f0f0;       /* Off-white text */
+    
+    /* Menu button variables */
+    --btn-bar-bg: aliceblue;   /* Light bars for dark contrast */
+    --btn-bar-hover: #d9534f;  /* Turns red on hover */
+    
+    /* Other page layout variables */
     --card-bg: #1a1a1a;
     --shadow-color: rgba(0, 0, 0, 0.5);
+    
+    /*menu overlay*/
+    --bg-overlay: #1b1b1b;
 }
 
 /* ==========================================================================
@@ -27,12 +51,14 @@ body.dark-mode {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .navbar1 {
-    background-color: var(--navbar-bg);
-    transition: background-color 0.3s ease;
+    /* 🔄 Updated to use the consolidated --nav-bg and --nav-text variables */
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card-box {
@@ -54,22 +80,4 @@ body {
     transition: all 0.3s ease;
 }
 
-/* ==========================================================================
-   THEME VARIABLES
-   ========================================================================== */
-
-/* ☀️ Default Light Mode Colors */
-:root {
-    --nav-bg: bisque;
-    --nav-text: #d9534f;        /* Reddish color for text */
-    --btn-bar-bg: #d9534f;     /* Bars match the text color in light mode */
-    --btn-bar-hover: #222222;  /* Dark color on hover */
-}
-
-/* 🌙 Dark Mode Colors */
-body.dark-mode {
-    --nav-bg: #1e1e1e;         /* Dark grey background */
-    --nav-text: #f0f0f0;       /* Off-white text */
-    --btn-bar-bg: aliceblue;   /* Light bars for dark contrast */
-    --btn-bar-hover: #d9534f;  /* Turns red on hover */
-}
+/* Fix your broken rule at the bottom */
