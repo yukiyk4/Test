@@ -1,4 +1,10 @@
-/* navbar.css */
+/* ==========================================================================
+   NAVIGATION & OVERLAY STYLES (Production Ready)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LAYER 4: Fixed Desktop Top Header Panel
+   -------------------------------------------------------------------------- */
 .navbar1 {
     color: var(--nav-text);
     background-color: var(--nav-bg);
@@ -8,34 +14,87 @@
     transform: translateX(-50%);
     width: 100%;
     max-width: auto;
-    z-index: 101;
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    /* Structural Placement: Sits on top of the layout content and blur panels */
+    z-index: 420;
 }
 
+/* --------------------------------------------------------------------------
+   LAYER 2: Frosted Glass Blur Backdrop Sheet
+   -------------------------------------------------------------------------- */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /* Semi-transparent tint color acts as the physical glass pane */
+    background-color: rgba(0, 0, 0, 0.3);
+
+    /* The Engine: Blurs layout objects that fall directly underneath layer 400 */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    /* Layer Target: Anchored exactly over webpage elements (z-index: 10) */
+    z-index: 400;
+
+    /* Control States: Completely invisible and unclickable by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+/* Triggered via JS toggle: Instantly opens the frosted backdrop */
+.menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   LAYER 3: Master Link Overlay (Floating Text Layer)
+   -------------------------------------------------------------------------- */
 .menu_overlay {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 300px; 
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    background-color: transparent;    
-    z-index: 100; 
-    padding: 6rem 2rem 2rem;
-    transition: left 0.4s ease; 
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    display: flex;
+    opacity: 70%;
 
-    
+    /* Must remain transparent so that the blurred glass layer below is visible */
+    background-color: transparent;
+    transition:
+        background-color 0.3s ease,
+        visibility 0.4s ease;
+
+    /* Layer Target: Elevated above the blur sheet so text strings stay sharp */
+    z-index: 410;
+
+    /* Ignore mouse movements when closed so users can click background cards */
+    pointer-events: none;
+    visibility: hidden;
 }
 
+/* Triggered via JS toggle: Activates click responses and visibility */
 .menu_overlay.active {
-    left: 0; 
+    pointer-events: auto;
+    visibility: visible;
 }
 
+/* --------------------------------------------------------------------------
+   LAYER 3 SUB-COMPONENT: Slide-Out Navigation Drawer Panel
+   -------------------------------------------------------------------------- */
 .menu_overlay ul {
     list-style: none;
     display: flex;
@@ -46,23 +105,38 @@
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+
+    /* Hidden State: Displaced entirely off the left side of the screen */
+    left: -320px;
+    transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
     padding: 6rem 2rem 2rem;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
 }
 
+/* Triggered via JS toggle: Smoothly slides the drawer menu into view */
+.menu_overlay.active ul {
+    left: 0;
+}
+
+/* Individual Navigation Menu Links */
 .menu_overlay a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.2s ease;
+    display: inline-block;
 }
 
+/* Hover Accent State for Links */
 .menu_overlay a:hover {
     color: #d9534f;
 }
 
+/* --------------------------------------------------------------------------
+   LAYER 4+: Hamburger Interaction Icon Controls
+   -------------------------------------------------------------------------- */
 .menu-btn {
     display: flex;
     flex-direction: column;
@@ -77,10 +151,12 @@
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 101; 
-    
+
+    /* Layer Target: Floating beside the desktop header for direct interaction */
+    z-index: 430;
 }
 
+/* Individual Lines Inside Hamburger Icon */
 .menu-btn .bar {
     width: 100%;
     height: 3px;
@@ -89,46 +165,24 @@
     transition: all 0.3s ease;
 }
 
+/* Icon Hover State */
 .menu-btn:hover .bar {
     background-color: var(--btn-bar-hover);
 }
 
+/* Dynamic State: Transforms Top Line into 45-degree angle */
 .menu-btn.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
     background-color: var(--btn-bar-hover);
 }
 
+/* Dynamic State: Completely dissolves middle bar line */
 .menu-btn.active .bar:nth-child(2) {
-    opacity: 0; 
+    opacity: 0;
 }
 
+/* Dynamic State: Transforms Bottom Line into -45-degree angle */
 .menu-btn.active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
     background-color: var(--btn-bar-hover);
 }
-
-/* ➕ ADD THIS AT THE BOTTOM */
-.menu_overlay::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3); /* Darkens the page */
-    
-    /* 🌟 The Blur Engine */
-    backdrop-filter: blur(8px);           
-    -webkit-backdrop-filter: blur(8px);   
-    
-    z-index: -1; /* Sits behind the <ul> menu card */
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-}
-
-.menu_overlay.active::before {
-    opacity: 1;
-    pointer-events: auto;
-}
-

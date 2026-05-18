@@ -8,7 +8,9 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 /* Main Spacing Container */
@@ -19,73 +21,68 @@ body {
 /* 🌟 Side-by-Side Flex Layout Wrapper */
 .main-layout-wrapper {
     display: flex;
-    gap: 30px;          
-    max-width: 1400px;  
-    margin: 3rem ;  
+    gap: 30px;
+    max-width: 1400px;
+    margin: 3rem;
     padding: 0 1.5rem;
-    justify-content: flex-start
+    justify-content: flex-start;
+    
+    position: relative; 
+    z-index: 10; /* Keeps all webpage content safely at the bottom layer */
 }
 
 .card-grid-container {
     display: grid;
-    /* Forces columns to stay between 280px and 320px instead of stretching */
     grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
-    
-    /* 🌟 Add both of these to hard-align the items and grid blocks left */
-    justify-content: start; 
+    justify-content: start;
     justify-items: start;
-    
-    gap: 20px; 
-    flex: 1;            
+    gap: 20px;
+    flex: 1;
     width: 100%;
-    z-index: 99;
-
+    
+    /* 🌟 FIXED: Removed z-index: 99. Leaving this here was cutting off the backdrop-filter */
 }
 
 /* Right Column: The Sidebar Box */
 .sidebar-box {
-    width: 300px;       
+    width: 300px;
     background-color: var(--card-bg);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 15px var(--shadow-color);
     height: fit-content;
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
     overflow-wrap: break-word; /* Forces long links/words to wrap to the next line */
-    word-break: break-word;    /* Old browser backup support */
+    word-break: break-word; /* Old browser backup support */
     margin-left: auto;
 }
 
-/* Navbar Component */
-.navbar1 {
-    background-color: var(--nav-bg);
-    color: var(--nav-text);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-/* Overlay Navigation Link Container */
-.menu_overlay {
-    background-color: var(--bg-overlay);
-    transition: background-color 0.3s ease;
-}
+
 
 /* Interactive Card Components */
 .card-link {
     text-decoration: none;
-    color: var(--text-color); 
+    color: var(--text-color);
     display: block;
 }
 
 .card-box {
-    background-color: var(--card-bg); 
-    color: var(--text-color);        
+    background-color: var(--card-bg);
+    color: var(--text-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px var(--shadow-color); 
-    height: 100%;                     
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    
+    box-shadow: 0 4px 15px var(--shadow-color);
+    height: 100%;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .card-image-wrapper img {
@@ -118,16 +115,15 @@ body {
 }
 
 .ul-normal {
-   margin :2rem;
+    margin: 2rem;
 }
 
-    
 /* Responsive Rules */
 @media (max-width: 900px) {
     .main-layout-wrapper {
-        flex-direction: column; 
+        flex-direction: column;
     }
     .sidebar-box {
-        width: 100%;            
+        width: 100%;
     }
 }
