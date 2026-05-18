@@ -1,60 +1,133 @@
-/* ==========================================
-   3. THE MAIN CONTENT CONTAINER 
-   ========================================== */
+/* ==========================================================================
+   DESIGN & LAYOUT STYLES (Structure Only)
+   ========================================================================== */
+
+/* Global Body Setup */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* Main Spacing Container */
 .content-container {
     padding: 5.5rem 1.5rem 2rem;
 }
 
-/* THE PARENT CONTAINER */
+/* 🌟 Side-by-Side Flex Layout Wrapper */
+.main-layout-wrapper {
+    display: flex;
+    gap: 30px;          
+    max-width: 1400px;  
+    margin: 3rem ;  
+    padding: 0 1.5rem;
+    justify-content: flex-start
+}
+
 .card-grid-container {
     display: grid;
+    /* Forces columns to stay between 280px and 320px instead of stretching */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
     
-    /* 🌟 THE MAGIC LINE: 
-       - auto-fit: Creates as many columns as will physically fit on the screen.
-       - minmax(280px, 1fr): Each card must be at least 280px wide. If there is extra 
-         room, they will stretch equally (1fr) to fill the remaining space. */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* 🌟 Add both of these to hard-align the items and grid blocks left */
+    justify-content: start; 
+    justify-items: start;
     
-    /* Creates a clean 30px gap between all the cards (rows and columns) */
-    gap: 30px; 
-    
-    /* Gives the entire container setup some breathing room inside your webpage */
+    gap: 20px; 
+    flex: 1;            
     width: 100%;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
     z-index: 99;
-    
 
 }
 
-/* MODIFICATION: Remove the individual card margins since the Grid layout now handles positioning */
+/* Right Column: The Sidebar Box */
+.sidebar-box {
+    width: 300px;       
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    height: fit-content;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    overflow-wrap: break-word; /* Forces long links/words to wrap to the next line */
+    word-break: break-word;    /* Old browser backup support */
+    margin-left: auto;
+}
+
+/* Navbar Component */
+.navbar1 {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Overlay Navigation Link Container */
+.menu_overlay {
+    background-color: var(--bg-overlay);
+    transition: background-color 0.3s ease;
+}
+
+/* Interactive Card Components */
 .card-link {
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color); 
     display: block;
-    /* Removed: max-width and margin from previous step so grid can control sizing */
 }
 
-/* (Keep the rest of your .card-box, img, and :hover styles from before!) */
 .card-box {
-    background-color: #ffffff;
+    background-color: var(--card-bg); 
+    color: var(--text-color);        
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Ensures all boxes match the height of the tallest card in the row */
+    box-shadow: 0 4px 15px var(--shadow-color); 
+    height: 100%;                     
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    
 }
+
 .card-image-wrapper img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
 }
+
 .card-content {
     padding: 1.5rem;
 }
+
 .card-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.ul-normal {
+   margin :2rem;
+}
+
+    
+/* Responsive Rules */
+@media (max-width: 900px) {
+    .main-layout-wrapper {
+        flex-direction: column; 
+    }
+    .sidebar-box {
+        width: 100%;            
+    }
 }

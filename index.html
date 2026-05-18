@@ -2,17 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Web Project</title>
-
+        <title>Title</title>
         <link rel="stylesheet" href="main.css" />
-
         <script type="module" src="main.js"></script>
     </head>
+
     <body>
         <nav class="navbar1">
             <h3>Testing under development</h3>
-            
+
             <button class="menu-btn" aria-label="Toggle Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -27,95 +25,130 @@
                 <li><a href="https://youtube.com/shorts/08GEjD4CBqw?si=XDGRZeUO_UQHTWm_">Sembang Rancak</a></li>
                 <li><a href="#">Test 2</a></li>
                 <li><button class="theme-toggle-btn" id="theme-toggle">🌙 Dark Mode</button></li>
-                
             </ul>
         </div>
 
+        <!-- 1. MAIN CONTAINER -->
         <main class="content-container">
             <h3>test 2</h3>
             <p>This content will sit cleanly below the navigation bar.</p>
 
-            <div class="card-grid-container">
-                <a href="https://youtu.be/LkxwwIyXJxE?si=XA5nNC9lCymv6-Wj" class="card-link">
-                    <div class="card-box">
-                        <div class="card-image-wrapper">
-                            <img
-                                src="https://static.wikia.nocookie.net/houkai-star-rail/images/f/f0/Character_Silver_Wolf_LV.999_Splash_Art.png/revision/latest/scale-to-width/360?cb=20260417164013"
-                                alt="Silver Wolf Lv 999" />
+            <!-- 2. THE FLEX WRAPPER THAT FORCES SIDE-BY-SIDE DESIGN -->
+            <div class="main-layout-wrapper">
+                <!-- 3. THE CARD GRID CONTAINER (Left Side) -->
+                <div class="card-grid-container">
+                    <a href="https://youtu.be/LkxwwIyXJxE?si=XA5nNC9lCymv6-Wj" class="card-link">
+                        <div class="card-box">
+                            <div class="card-image-wrapper">
+                                <img
+                                    src="https://static.wikia.nocookie.net/houkai-star-rail/images/f/f0/Character_Silver_Wolf_LV.999_Splash_Art.png/revision/latest/scale-to-width/360?cb=20260417164013"
+                                    alt="Silver Wolf Lv 999" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Silver Wolf Lv 999</h3>
+                                <p>
+                                    Chaotic mastermind radiating confidence, memes, hacks, and unstoppable gamer energy.
+                                </p>
+                            </div>
                         </div>
+                    </a>
 
-                        <div class="card-content">
-                            <h3>Silver Wolf Lv 999</h3>
-                            <p>Chaotic mastermind radiating confidence, memes, hacks, and unstoppable gamer energy.</p>
+                    <a href="https://youtu.be/fGm2X5XkwpY?si=IXyMqyveQxeF-Q6D" class="card-link">
+                        <div class="card-box">
+                            <div class="card-image-wrapper">
+                                <img
+                                    src="https://sr.yatta.moe/hsr/assets/UI/avatar/large/1505.sm.png?vh=2026032500"
+                                    alt="Evanescia" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Evanescia</h3>
+                                <p>
+                                    Dreamy foxhearted trickster radiating elegance, chaos, mystery, charm, and playful
+                                    intelligence.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="https://youtu.be/fGm2X5XkwpY?si=IXyMqyveQxeF-Q6D" class="card-link">
-                    <div class="card-box">
-                        <div class="card-image-wrapper">
-                            <img
-                                src="https://sr.yatta.moe/hsr/assets/UI/avatar/large/1505.sm.png?vh=2026032500"
-                                alt="Evanescia" />
+                    </a>
+
+                    <a href="https://youtu.be/0FPvfC8g6-Q?si=dxDhFh07nZkHKQsC" class="card-link">
+                        <div class="card-box">
+                            <div class="card-image-wrapper">
+                                <img
+                                    src="https://upload-os-bbs.hoyolab.com/upload/2025/02/19/296851304/3be3af6f62aab93a2ef1b66959f6b36c_3091172646607850799.png"
+                                    alt="Castorice" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Castorice</h3>
+                                <p>
+                                    Ethereal beauty wielding sorrow, grace, deadly power, silence, and haunting
+                                    determination.
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <h3>Evanescia</h3>
-                            <p>Dreamy foxhearted trickster radiating elegance, chaos, mystery, charm, and playful intelligence.</p>
+                    </a>
+
+                    <a href="https://youtu.be/vh1ipA1aaUQ?si=8EA9Rk5uPHh_hdJg" class="card-link">
+                        <div class="card-box">
+                            <div class="card-image-wrapper">
+                                <img
+                                    src="https://pic.bittopup.com/apiUpload/f7cc612a556be8bae716de77a4116282.jpg"
+                                    alt="Evernight" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Evernight</h3>
+                                <p>
+                                    Elegant, mysterious, moonlit strategist wielding chilling power behind sorrowful
+                                    eyes.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="https://youtu.be/0FPvfC8g6-Q?si=dxDhFh07nZkHKQsC" class="card-link">
-                    <div class="card-box">
-                        <div class="card-image-wrapper">
-                            <img
-                                src="https://upload-os-bbs.hoyolab.com/upload/2025/02/19/296851304/3be3af6f62aab93a2ef1b66959f6b36c_3091172646607850799.png"
-                                alt="Castorice" />
+                    </a>
+
+                    <a href="https://youtu.be/CRAuK8T6Xis?si=nNtUuMFUyyrKZJNN" class="card-link">
+                        <div class="card-box">
+                            <div class="card-image-wrapper">
+                                <img
+                                    src="https://hsr.keqingmains.com/wp-content/uploads/2025/11/Character_Cyrene_Splash_Art.webp"
+                                    alt="Cyrene" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Cyrene</h3>
+                                <p>Gentle, enigmatic beauty hiding ancient wisdom beneath serene, dreamlike silence.</p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <h3>Castorice</h3>
-                            <p>Ethereal beauty wielding sorrow, grace, deadly power, silence, and haunting determination.</p>
+                    </a>
+
+                    <a href="https://youtu.be/GhJOJxHZ20E?si=BX15ZFQwaNX-hgjw" class="card-link">
+                        <div class="card-box">
+                            <div class="card-image-wrapper">
+                                <img
+                                    src="https://static.icy-veins.com/images/honkai-star-rail/characters/full/hyacine.webp"
+                                    alt="Hyacine" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Hyacine</h3>
+                                <p>
+                                    Cheerful healer radiating warmth, compassion, and hopeful strength through every
+                                    hardship.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="https://youtu.be/vh1ipA1aaUQ?si=8EA9Rk5uPHh_hdJg" class="card-link">
-                    <div class="card-box">
-                        <div class="card-image-wrapper">
-                            <img
-                                src="https://pic.bittopup.com/apiUpload/f7cc612a556be8bae716de77a4116282.jpg"
-                                alt="Evernight" />
-                        </div>
-                        <div class="card-content">
-                            <h3>Evernight</h3>
-                            <p>Elegant, mysterious, moonlit strategist wielding chilling power behind sorrowful eyes.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://youtu.be/CRAuK8T6Xis?si=nNtUuMFUyyrKZJNN" class="card-link">
-                    <div class="card-box">
-                        <div class="card-image-wrapper">
-                            <img
-                                src="https://hsr.keqingmains.com/wp-content/uploads/2025/11/Character_Cyrene_Splash_Art.webp"
-                                alt="Cyrene" />
-                        </div>
-                        <div class="card-content">
-                            <h3>Cyrene</h3>
-                            <p>Gentle, enigmatic beauty hiding ancient wisdom beneath serene, dreamlike silence.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://youtu.be/GhJOJxHZ20E?si=BX15ZFQwaNX-hgjw" class="card-link">
-                    <div class="card-box">
-                        <div class="card-image-wrapper">
-                            <img
-                                src="https://static.icy-veins.com/images/honkai-star-rail/characters/full/hyacine.webp"
-                                alt="Hyacine" />
-                        </div>
-                        <div class="card-content">
-                            <h3>Hyacine</h3>
-                            <p>Cheerful healer radiating warmth, compassion, and hopeful strength through every hardship.</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+                <!-- End Card Grid -->
+
+                <!-- 4. YOUR NEW BOX BESIDE THE GRID (Right Side Sidebar) -->
+                <aside class="sidebar-box">
+                    <h3>Sidebar Box</h3>
+                    <p>I sit right next to the main card grid!</p>
+                    <ul class="ul-normal">
+                        <li><a>test</a></li>
+                        <li><a>test2</a></li>
+                        <li><a>test3</a></li>
+                    </ul>
+                </aside>
             </div>
+            <!-- End Main Layout Wrapper -->
         </main>
     </body>
 </html>
